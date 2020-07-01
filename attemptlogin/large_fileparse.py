@@ -14,4 +14,3 @@ for line in keystone_file:
 
 print("The number of failed log in attempts is", loginfail)
 keystone_file.close() # close the open file
-
