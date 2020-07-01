@@ -21,5 +21,6 @@ plt.yticks(np.arange(0, 81, 10))
 plt.legend((p1[0], p2[0]), ("LAN", "WAN"))
 
 # display the graph
-plt.show()
+plt.savefig("2018summary.png")
+#plt.show()
 
