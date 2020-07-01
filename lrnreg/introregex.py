@@ -16,5 +16,6 @@ searchMe = urllib.request.urlopen(url).read().decode("utf-8")
 
 if re.search(searchFor, searchMe):
     print("Found a match!")
+    print(f"Count: {len(re.findall(searchFor,searchMe))}")
 else:
     print("No match!")
