@@ -18,7 +18,7 @@ def parsecsvdata():
         # parse csv data with csv.reader
         downdata = csv.reader(downtime, delimiter=",")
         for row in downdata:
-            rowdat = (row[0], row[1], row[2], row[3])
+            rowdat = (int(row[0]), int(row[1]), int(row[2]), int(row[3]))
             summary.append(rowdat) # add dict to list
     return summary
 
