@@ -17,13 +17,13 @@ def main():
     ## Decode the response
     got_dj = gotresp.json()
 
-    print(got_dj)
-    print(f"The character {got_charToLookup} has the URL: {got_dj[0]['url']}")
+    ##print(got_dj)
+    print(f"\n\nThe character {got_charToLookup} has the URL: {got_dj[0]['url']}")
     
     if got_dj is not None:
         if got_dj[0]['allegiances'] is not None:
             house=requests.get(got_dj[0]['allegiances'][0])
-            print(f"{got_charToLookup}'s allegiance is to {house.json()['name']}")
+            print(f"\n\n{got_charToLookup}'s allegiance is to {house.json()['name']}\n")
 
 if __name__ == "__main__":
     main()
