@@ -112,5 +112,5 @@ while True:
         break
 
     if currentRoom == 'pythonClass' and 'knowledge' in inventory:
-        print('You can\'t have enough knowledge, You are stuck here for Eternity!!!')
+        print("Zach: \"You can't have enough knowledge, You are stuck here for Eternity!!!\"")
         break
