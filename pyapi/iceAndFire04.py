@@ -22,8 +22,8 @@ def main():
     
     if got_dj is not None:
         if got_dj[0]['allegiances'] is not None:
-            house=requests.get(got_dj[0]['allegiances'][0])['name']
-            print(f"{got_charToLookup}'s allegiance is to {house}")
+            house=requests.get(got_dj[0]['allegiances'][0])
+            print(f"{got_charToLookup}'s allegiance is to {house.json()['name']}")
 
 if __name__ == "__main__":
     main()
