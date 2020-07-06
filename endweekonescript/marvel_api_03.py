@@ -86,4 +86,3 @@ if __name__ == '__main__':
       help='Character 2 to search for within the Marvel universe for comparision')
     args = parser.parse_args()
     main()
-
