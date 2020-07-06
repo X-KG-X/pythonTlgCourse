@@ -49,13 +49,27 @@ def main():
     ## display results
     # comicsChar2=uncannyxmen1['data']['results'][0]['comics']['items']
     comicsChar2count=uncannyxmen2['data']['results'][0]['comics']['available']
-
+    # Comparing the comic count of 2 charaters
     if(comicsChar1count>comicsChar2count):
-      print(f"{args.char1}({comicsChar1count}) has more comic appearances then {args.char2}({comicsChar2count})")
+      print(f"\n\n{args.char1}({comicsChar1count}) has more comic appearances then {args.char2}({comicsChar2count})\n")
     elif(comicsChar1count<comicsChar2count):
-      print(f"{args.char2}({comicsChar2count}) has more comic appearances then {args.char1}({comicsChar1count})")
+      print(f"\n\n{args.char2}({comicsChar2count}) has more comic appearances then {args.char1}({comicsChar1count})\n")
     else:
-      print(f"Same number of appearances {comicsChar1count}")
+      print(f"\n\nSame number of comic appearances {comicsChar1count}\n")
+    
+
+    # character1 storie count
+    storiesChar1count=uncannyxmen1['data']['results'][0]['stories']['available']
+    # character1 storie count
+    storiesChar2count=uncannyxmen2['data']['results'][0]['stories']['available']
+    #Compare event appareances of the two charachers
+    if(storiesChar1count>storiesChar2count):
+      print(f"\n\n{args.char1}({storiesChar1count}) has more story appearances then {args.char2}({storiesChar2count})\n")
+    elif(storiesChar1count<storiesChar2count):
+      print(f"\n\n{args.char2}({storiesChar2count}) has more story appearances then {args.char1}({storiesChar1count})\n")
+    else:
+      print(f"\n\nSame number of story appearances {storiesChar1count}\n")
+
 
 ## Define arguments to collect
 if __name__ == '__main__':
