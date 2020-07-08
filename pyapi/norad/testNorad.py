@@ -7,12 +7,13 @@ import json
 
 def main():
     # resp=requests.get("http://www.celestrak.com/NORAD/elements/active.txt")
-    # print(resp)
-
+    # # print(resp)
+    # #get data from the norad and write it to active.txt
     # with open("active.txt", "w") as f:
     #     for line in resp.text:
     #         f.write(line)
 
+    #write the names of the satellite to celest.txt
     count=0
     with open("celest.txt","w") as celesfile:
         with open("active.txt","r") as f:
@@ -20,8 +21,9 @@ def main():
                 if count%3==0:
                     celesfile.write(line)
                 count+=1
-    print(count)
+    # print(count)
 
+    #create a dictionary of name:revsdata celest{}
     celest={}
     cnt=0
     with open("celest.txt","r") as celesfile:
@@ -29,12 +31,14 @@ def main():
             celest[line.strip()]=float(readRevsData(cnt))
             cnt+=1
 
-
-    dataDF=pd.DataFrame(list(celest.items()),columns=['col1','col2'], )
+    #use the celest{} to create pandas dataframe
+    dataDF=pd.DataFrame(list(celest.items()),columns=['col1','col2'])
     dataSorted=dataDF.sort_values(by=['col2'])
+    #print top ten satellite that take the most revs per day
+    print(f"\n\n Top ten satellites that make the most revolutions around Earth:")
     print(dataSorted.tail(10))
-    
 
+#reads the revdata for given satellite position
 def readRevsData(i):
     with open("active.txt","r") as f:
         txtlines=f.readlines()
