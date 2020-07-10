@@ -3,7 +3,7 @@
 import sqlite3
 conn = sqlite3.connect('test.db')
 print("Opened database successfully")
-conn.execute('''CREATE TABLE COMPANY
+conn.execute('''CREATE TABLE IF NOT EXISTS COMPANY
  (ID INT PRIMARY KEY     NOT NULL,
  NAME           TEXT    NOT NULL,
  AGE            INT     NOT NULL,
